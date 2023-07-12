@@ -1,6 +1,3 @@
-# button.py
-
-from config import FORCE_SUB_CHANNEL, FORCE_SUB_GROUP, FORCE_SUBS_CHANNEL_2
 from pyrogram.types import InlineKeyboardButton
 
 
