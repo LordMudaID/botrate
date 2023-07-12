@@ -20,9 +20,9 @@ def start_button(client):
             buttons.append([InlineKeyboardButton(text="JOIN FORCE_SUBS_CHANNEL_2", url=client.invitelink3)])
         elif FORCE_SUBS_CHANNEL_2 and not FORCE_SUB_GROUP:
             buttons.append([InlineKeyboardButton(text="JOIN GROUP", url=client.invitelink2)])
+            buttons.append([InlineKeyboardButton(text="JOIN FORCE_SUBS_CHANNEL_2", url=client.invitelink3)])
         elif FORCE_SUBS_CHANNEL_2 and FORCE_SUB_GROUP:
             buttons.append([InlineKeyboardButton(text="JOIN GROUP", url=client.invitelink2)])
-            buttons.append([InlineKeyboardButton(text="JOIN FORCE_SUBS_CHANNEL_2", url=client.invitelink3)])
 
     if not FORCE_SUB_CHANNEL and FORCE_SUB_GROUP:
         buttons.append([InlineKeyboardButton(text="JOIN GROUP", url=client.invitelink2)])
@@ -48,7 +48,6 @@ def fsub_button(client, message):
             buttons.append([InlineKeyboardButton(text="JOIN GROUP", url=client.invitelink2)])
         elif FORCE_SUBS_CHANNEL_2 and FORCE_SUB_GROUP:
             buttons.append([InlineKeyboardButton(text="JOIN GROUP", url=client.invitelink2)])
-            buttons.append([InlineKeyboardButton(text="JOIN FORCE_SUBS_CHANNEL_2", url=client.invitelink3)])
 
     if not FORCE_SUB_CHANNEL and FORCE_SUB_GROUP:
         buttons.append([InlineKeyboardButton(text="JOIN GROUP", url=client.invitelink2)])
