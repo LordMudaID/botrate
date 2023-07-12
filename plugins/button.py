@@ -15,14 +15,16 @@ def start_button(client):
     if FORCE_SUB_CHANNEL and not FORCE_SUB_GROUP:
         buttons.insert(1, [InlineKeyboardButton(text="ᴄʜᴀɴɴᴇʟ", url=client.invitelink)])
 
-        if FORCE_SUB_GROUP and not FORCE_SUBS_CHANNEL_2:
+        if not client.is_subscribed_to_channel():
+            buttons.append([InlineKeyboardButton(text="JOIN CHANNEL", url=client.invitelink)])
+
+        if FORCE_SUB_GROUP:
             buttons.append([InlineKeyboardButton(text="ɢʀᴏᴜᴘ", url=client.invitelink2)])
+
+        if FORCE_SUBS_CHANNEL_2:
+            buttons.append([InlineKeyboardButton(text="FORCE_SUBS_CHANNEL_2", url=client.invitelink3)])
+        else:
             buttons.append([InlineKeyboardButton(text="JOIN FORCE_SUBS_CHANNEL_2", url=client.invitelink3)])
-        elif FORCE_SUBS_CHANNEL_2 and not FORCE_SUB_GROUP:
-            buttons.append([InlineKeyboardButton(text="JOIN GROUP", url=client.invitelink2)])
-            buttons.append([InlineKeyboardButton(text="JOIN FORCE_SUBS_CHANNEL_2", url=client.invitelink3)])
-        elif FORCE_SUBS_CHANNEL_2 and FORCE_SUB_GROUP:
-            buttons.append([InlineKeyboardButton(text="JOIN GROUP", url=client.invitelink2)])
 
     if not FORCE_SUB_CHANNEL and FORCE_SUB_GROUP:
         buttons.append([InlineKeyboardButton(text="JOIN GROUP", url=client.invitelink2)])
@@ -41,13 +43,16 @@ def fsub_button(client, message):
     if FORCE_SUB_CHANNEL and not FORCE_SUB_GROUP:
         buttons.append([InlineKeyboardButton(text="JOIN CHANNEL", url=client.invitelink)])
 
-        if FORCE_SUB_GROUP and not FORCE_SUBS_CHANNEL_2:
+        if not client.is_subscribed_to_channel():
+            buttons.append([InlineKeyboardButton(text="JOIN CHANNEL", url=client.invitelink)])
+
+        if FORCE_SUB_GROUP:
             buttons.append([InlineKeyboardButton(text="JOIN GROUP", url=client.invitelink2)])
+
+        if FORCE_SUBS_CHANNEL_2:
+            buttons.append([InlineKeyboardButton(text="FORCE_SUBS_CHANNEL_2", url=client.invitelink3)])
+        else:
             buttons.append([InlineKeyboardButton(text="JOIN FORCE_SUBS_CHANNEL_2", url=client.invitelink3)])
-        elif FORCE_SUBS_CHANNEL_2 and not FORCE_SUB_GROUP:
-            buttons.append([InlineKeyboardButton(text="JOIN GROUP", url=client.invitelink2)])
-        elif FORCE_SUBS_CHANNEL_2 and FORCE_SUB_GROUP:
-            buttons.append([InlineKeyboardButton(text="JOIN GROUP", url=client.invitelink2)])
 
     if not FORCE_SUB_CHANNEL and FORCE_SUB_GROUP:
         buttons.append([InlineKeyboardButton(text="JOIN GROUP", url=client.invitelink2)])
