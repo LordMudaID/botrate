@@ -12,35 +12,17 @@ def start_button(client):
         ],
     ]
 
-    if FORCE_SUB_CHANNEL and not FORCE_SUB_GROUP:
+    if FORCE_SUB_CHANNEL and not FORCE_SUB_GROUP and FORCE_SUBS_CHANNEL_2:
         buttons.insert(1, [InlineKeyboardButton(text="ᴄʜᴀɴɴᴇʟ", url=client.invitelink)])
+        buttons.append([InlineKeyboardButton(text="ɢʀᴏᴜᴘ", url=client.invitelink2)])
+        buttons.append([InlineKeyboardButton(text="FORCE_SUBS_CHANNEL_2", url=client.invitelink3)])
 
-        if FORCE_SUBS_CHANNEL_2:
-            buttons.append([InlineKeyboardButton(text="FORCE_SUBS_CHANNEL_2", url=client.invitelink3)])
-        else:
-            buttons.append([InlineKeyboardButton(text="ᴊᴏɪɴ FORCE_SUBS_CHANNEL_2", url=client.invitelink3)])
-
-    if FORCE_SUB_CHANNEL and FORCE_SUB_GROUP:
+    if FORCE_SUB_CHANNEL and FORCE_SUB_GROUP and FORCE_SUBS_CHANNEL_2:
         buttons.insert(1, [
             InlineKeyboardButton(text="ᴄʜᴀɴɴᴇʟ", url=client.invitelink),
             InlineKeyboardButton(text="ɢʀᴏᴜᴘ", url=client.invitelink2)
         ])
-
-        if FORCE_SUBS_CHANNEL_2:
-            buttons.append([InlineKeyboardButton(text="FORCE_SUBS_CHANNEL_2", url=client.invitelink3)])
-        else:
-            buttons.append([InlineKeyboardButton(text="ᴊᴏɪɴ FORCE_SUBS_CHANNEL_2", url=client.invitelink3)])
-
-    if not FORCE_SUB_CHANNEL and FORCE_SUB_GROUP:
-        buttons.append([InlineKeyboardButton(text="ɢʀᴏᴜᴘ", url=client.invitelink2)])
-
-        if FORCE_SUBS_CHANNEL_2:
-            buttons.append([InlineKeyboardButton(text="FORCE_SUBS_CHANNEL_2", url=client.invitelink3)])
-        else:
-            buttons.append([InlineKeyboardButton(text="ᴊᴏɪɴ FORCE_SUBS_CHANNEL_2", url=client.invitelink3)])
-
-    if not FORCE_SUBS_CHANNEL_2:
-        buttons.append([InlineKeyboardButton(text="ᴊᴏɪɴ FORCE_SUBS_CHANNEL_2", url=client.invitelink3)])
+        buttons.append([InlineKeyboardButton(text="FORCE_SUBS_CHANNEL_2", url=client.invitelink3)])
 
     return buttons
 
@@ -48,32 +30,17 @@ def start_button(client):
 def fsub_button(client, message):
     buttons = []
 
-    if FORCE_SUB_CHANNEL and not FORCE_SUB_GROUP:
+    if FORCE_SUB_CHANNEL and not FORCE_SUB_GROUP and FORCE_SUBS_CHANNEL_2:
         buttons.append([InlineKeyboardButton(text="ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ", url=client.invitelink)])
+        buttons.append([InlineKeyboardButton(text="ᴊᴏɪɴ ɢʀᴏᴜᴘ", url=client.invitelink2)])
+        buttons.append([InlineKeyboardButton(text="FORCE_SUBS_CHANNEL_2", url=client.invitelink3)])
 
-        if FORCE_SUBS_CHANNEL_2:
-            buttons.append([InlineKeyboardButton(text="FORCE_SUBS_CHANNEL_2", url=client.invitelink3)])
-        else:
-            buttons.append([InlineKeyboardButton(text="ᴊᴏɪɴ FORCE_SUBS_CHANNEL_2", url=client.invitelink3)])
-
-    if FORCE_SUB_CHANNEL and FORCE_SUB_GROUP:
+    if FORCE_SUB_CHANNEL and FORCE_SUB_GROUP and FORCE_SUBS_CHANNEL_2:
         buttons.append([
             InlineKeyboardButton(text="ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ", url=client.invitelink),
             InlineKeyboardButton(text="ᴊᴏɪɴ ɢʀᴏᴜᴘ", url=client.invitelink2)
         ])
-
-        if FORCE_SUBS_CHANNEL_2:
-            buttons.append([InlineKeyboardButton(text="FORCE_SUBS_CHANNEL_2", url=client.invitelink3)])
-        else:
-            buttons.append([InlineKeyboardButton(text="ᴊᴏɪɴ FORCE_SUBS_CHANNEL_2", url=client.invitelink3)])
-
-    if not FORCE_SUB_CHANNEL and FORCE_SUB_GROUP:
-        buttons.append([InlineKeyboardButton(text="ᴊᴏɪɴ ɢʀᴏᴜᴘ", url=client.invitelink2)])
-
-        if FORCE_SUBS_CHANNEL_2:
-            buttons.append([InlineKeyboardButton(text="FORCE_SUBS_CHANNEL_2", url=client.invitelink3)])
-        else:
-            buttons.append([InlineKeyboardButton(text="ᴊᴏɪɴ FORCE_SUBS_CHANNEL_2", url=client.invitelink3)])
+        buttons.append([InlineKeyboardButton(text="FORCE_SUBS_CHANNEL_2", url=client.invitelink3)])
 
     try:
         buttons.append([
